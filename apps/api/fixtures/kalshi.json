@@ -1,0 +1,20 @@
+[
+  {
+    "platform": "kalshi",
+    "platform_market_id": "FED-RATE-DEC-YES-NO",
+    "title": "Will the Fed change rates in December?",
+    "description": "Aggregated summary",
+    "category": "macro",
+    "tags": ["rate-decision"],
+    "status": "open",
+    "resolve_time": "2025-12-20T00:00:00Z",
+    "close_time": "2025-12-15T00:00:00Z",
+    "currency": "USD",
+    "metrics": { "volume_24h": 4567, "volume_7d": 9876 },
+    "contracts": [
+      { "name": "Yes", "code": "YES", "last_price": 0.3, "best_bid": 0.29, "best_ask": 0.31 },
+      { "name": "No", "code": "NO", "last_price": 0.7, "best_bid": 0.69, "best_ask": 0.71 }
+    ]
+  }
+]
+

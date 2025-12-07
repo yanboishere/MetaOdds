@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Market {
+  id           String   @id
+  platform     String
+  title        String
+  description  String
+  category     String
+  tags         String
+  status       String
+  resolve_time DateTime?
+  close_time   DateTime?
+  currency     String
+  volume_24h   Float?
+  volume_7d    Float?
+  open_interest Float?
+  fee_rate     Float?
+  updated_at   DateTime @default(now())
+  contracts    Contract[]
+  histories    MarketHistory[]
+}
+
+model Contract {
+  id           String   @id
+  market_id    String
+  market       Market   @relation(fields: [market_id], references: [id])
+  name         String
+  last_price   Float?
+  best_bid     Float?
+  best_ask     Float?
+  implied_prob Float?
+  open_interest Float?
+  fee_rate     Float?
+  updated_at   DateTime @default(now())
+}
+
+model MarketHistory {
+  id           String  @id
+  market_id    String
+  market       Market  @relation(fields: [market_id], references: [id])
+  contract_name String?
+  ts           DateTime
+  price        Float?
+  volume       Float?
+  @@index([market_id, ts])
+}
