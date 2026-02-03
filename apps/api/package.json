@@ -1,0 +1,20 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "fastify": "^4.24.3",
+    "@fastify/cors": "^8.4.1",
+    "@rwa/shared": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "ts-node-dev": "^2.0.0",
+    "@types/node": "^20.0.0"
+  }
+}

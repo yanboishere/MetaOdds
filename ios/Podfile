@@ -1,0 +1,6 @@
+platform :ios, '14.0'
+use_frameworks!
+
+target 'MetaOdds' do
+  # Pods for MetaOdds
+end
